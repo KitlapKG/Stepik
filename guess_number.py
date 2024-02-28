@@ -124,10 +124,10 @@ async def process_numbers_answer(message: Message):
             )
         elif int(message.text) > user['secret_number']:
             user['attempts'] -= 1
-            await message.answer('Мое число меньше')
+            await message.answer(f'Мое число меньше\nУ вас {'осталось' if user['attempts'] != 1 else "осталась"} {user['attempts']} {'попытки' if user['attempts'] != 1 else 'попытка'}')
         elif int(message.text) < user['secret_number']:
             user['attempts'] -= 1
-            await message.answer('Мое число больше')
+            await message.answer(f'Мое число больше\nУ вас {'осталось' if user['attempts'] != 1 else "осталась"} {user['attempts']} {'попытки' if user['attempts'] != 1 else 'попытка'}')
 
         if user['attempts'] == 0:
             user['in_game'] = False
