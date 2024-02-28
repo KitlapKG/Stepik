@@ -6,4 +6,6 @@ print('These are new local changes')
 def another_some_function(number: int | float | complex = 0) -> None:
     return number * 5
 
+"MB-Project Buro"
+
 print(another_some_function(3))
